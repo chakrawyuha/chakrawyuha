@@ -3,116 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Pacifico&display=swap" rel="stylesheet">
     <title>Chakrawyuha 2k24</title>
     <style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap');
         body{
-            background: linear-gradient(to bottom,#00000088,#00000088),url("background.jpg") center center;
-            /* background-repeat: no-repeat; */
-            overflow: hidden;
+            background:url("FlyerBGDesign.png") center center fixed no-repeat;;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .overlay{
+            background-color: #C11620;
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: -1;
+            opacity: 70%;
+        }
+        .logo-div{
+            margin-top: 5%;
+            width: 100%;
+            text-align: center;
+        }
+        .logo{
+             width: 70%;
+        }
+        .nav-bar{
+            width: 70%;
+            display: flex;
+            justify-content: space-around;
+            color: #fff;
+            align-items: center ;
+            font-weight: 100;
+            font-family: 'Inter', sans-serif;
+        }
+        .nav-bar span{
+            transition: 0.5s;
+        }
+        .nav-bar span a{
+            color: #fff;
+            text-decoration: none;
         }
 
-        .main-div{
+        .nav-bar span:hover{
+            letter-spacing: 2px;
+
+        }
+        .nav-bar-main{
+            margin-top: 2%;
             width: 100%;
-            height: 80vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-direction: column;
-            font-family: 'Cinzel Decorative', cursive;
         }
-        .main-head{
-            font-size:4em;
-            text-align: center;
-        color: #fff;
-        text-shadow:
-            0 0 7px #fff,
-            0 0 10px #fff,
-            0 0 21px #fff,
-            0 0 42px #0fa,
-            0 0 82px #0fa,
-            0 0 92px #0fa,
-            0 0 102px #0fa,
-            0 0 151px #0fa;
-        margin-bottom: 0;
-        }
-        .sub-head{
-            font-size: 2em;
-            color: #fff;
-            animation: flicker 1.5s infinite alternate;
-            margin-top: 0;
-        }
-        @keyframes flicker {
-    
-            0%, 18%, 22%, 25%, 53%, 57%, 100% {
-        
-                text-shadow:
-                0 0 4px #fff,
-                0 0 11px #fff,
-                0 0 19px #fff,
-                0 0 40px #0fa,
-                0 0 80px #0fa,
-                0 0 90px #0fa,
-                0 0 100px #0fa,
-                0 0 150px #0fa;
-            
-            }
-            
-            20%, 24%, 55% {        
-                text-shadow: none;
-            }    
-        }
-        /* .overlay-div{
-            background-color: #0000008c;
+        .regi-btns{
             width: 100%;
-            height: 100vh;
-            margin: 0;
-            padding: 0;
-            top: 0;
-            left: 0;
-            position: absolute;
-        } */
-        .c-blob{
-            position: absolute;
-            width: 200px;
-            aspect-ratio: 1;
-            border-radius: 50%;
-            /* background-color: #0fa; */
-            filter: blur(10px);
+            display: flex;
+            gap: 5%;
+            justify-content: center;
+            margin-top: 0%;
         }
-        @media only screen and (max-width: 730px) {
-            .main-head{
-                font-size: 2em;
-            }
-            .sub-head{
-                font-size: 1em;
-            }
+        .regi-btn{
+            background: none;
+            border: none;
+            outline: none;
+            padding: 1%;
+            padding-left: 2%;
+            padding-right: 2%;
+            border-radius: 10px;
+            color: #C11620;
+            background-color: #EBE728;
+            transition: 0.4s;
+            border: 1px solid #EBE728;
+            box-shadow: 10px 8px #960c15;
         }
+        .regi-btn:hover{
+            box-shadow: 5px 4px #960c15;
+            background-color: transparent;
+            color: #EBE728;
+            border: 1px solid #EBE728;
+        }
+        a{
+            text-decoration: none;
+            color:#960c15;
+        }
+        a:hover{
+            color: #EBE728;
+        }
+        .about-event{
+            color: #EBE728;
+            margin-left: 9%;
+            margin-right: 9%;
+
+            text-align: center;
+            font-weight: 300;
+            font-family: 'Inter', sans-serif;
+        }
+        .about-head{
+            text-align: center;
+            font-size: 30px;
+            color: #EBE728;
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+            margin-top: 6%;
+        }
+        .about-sec{
+            /* background-color: #EBE728; */
+            margin-left: 5%;
+            margin-right: 5%;
+            margin-top: 5%;
+            padding: .2%;
+            border-radius: 10px;
+        }
+        @media only screen and (max-width: 375px) {
+                .nav-bar{
+                    margin-top: 10%;
+                }
+                .logo{
+                    width: 100%;
+                    margin-top: 10%;
+                }
+                .regi-btns{
+                    margin-top: 15%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10%;
+                    align-items: center;
+                }
+                .regi-btn{
+                    border-radius: 10px;
+                    /* width: 50%; */
+                    margin-top:5%;
+                    height: 40px;
+                }
+    }
     </style>
 </head>
 <body>
-    <div class="c-blob" id="blob"></div>
-    <div class="overlay-div"></div>
-    <div class="main-div">
-    <p class="main-head">Chakrawyuha 2k24</p>
-    <p class="sub-head">Coming soon..</p>
+    <div class="overlay"></div>
+    <div class="nav-bar-main">
+    <div class="nav-bar">
+        <span><a href="Chakrawyuha-Brochure-2k24.pdf" target="_blank">Brochure</a></span>
+        <!-- <span><a href="#">Registration</a></span> -->
+        <!-- <span><a href="#">Contact Team</a></span> -->
+        <span><a href="https://www.instagram.com/_kesscchakrawyuha_" target="_blanks">Instagram</a></span>
+    </div>
+    </div>
+    <div class="logo-div"><img src="2k24-logo/chakrawyuha-main-logo.png" alt="Chakrawyuha-comic-theme" class="logo"></div>
+    <div class="regi-btns">
+        <button class="regi-btn"><a href="https://forms.gle/BkxyymSFTpfXAf9H6" target="_blank">CC Registration </a></button>
+        <button class="regi-btn"> <a href="https://forms.gle/F9TbH1LRkFsJX9ab6" target="_blank"> NCP Registration</a></button>
+    </div>
+    <div class="about-sec">
     </div>
 </body>
-<script>
-    let mouse_blob=document.getElementById('blob');
-        window.onmousemove = e =>{
-            const x= e.clientX;
-            const new_x=x-mouse_blob.offsetWidth/2;
-            const y=e.clientY-mouse_blob.offsetHeight/2;
-            const blobframes={
-                transform: `translate(${new_x}px,${y}px)`
-            }
-            mouse_blob.animate(blobframes,{
-                duration:1000,
-                fill:"forwards"
-            });
-        }
-</script>
 </html>
