@@ -1,161 +1,304 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chakrawyuha 2k24</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Chakrawyuha 24 -25</title>
     <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap');
-        body{
-            background:url("FlyerBGDesign.png") center center fixed no-repeat;;
-            background-size: cover;
-            background-repeat: no-repeat;
+      @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap");
+      @font-face {
+        font-family: Hell Print;
+        src: url("Hell Print.ttf");
+      }
+      @font-face {
+        font-family: Scream Again;
+        src: url("/Scream\ Again.ttf");
+      }
+      @font-face {
+        font-family: Scream Blood;
+        src: url("/Scream\ Blood\ Regular.ttf");
+      }
+      body {
+        background: url("/background.png");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        animation: movespace 300s infinite;
+        overflow: hidden;
+      }
+      @keyframes movespace {
+        0% {
+          background-position: top;
         }
-        .overlay{
-            background-color: #C11620;
-            width: 100%;
-            height: 100vh;
-            position: absolute;
-            left: 0;
-            top: 0;
-            z-index: -1;
-            opacity: 70%;
+        50% {
+          background-position: center;
         }
-        .logo-div{
-            margin-top: 5%;
-            width: 100%;
-            text-align: center;
+        100% {
+          background-position: top;
         }
-        .logo{
-             width: 70%;
+      }
+      .block-content {
+        text-align: center;
+        margin-top: 15%;
+      }
+      .black-bg {
+        height: 100vh;
+        width: 100vw;
+        position: absolute;
+        background-color: #0000009d;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        z-index: -1;
+      }
+      .main-title {
+        font-family: "Hell Print";
+        color: #f7f0d5;
+        font-size: 120px;
+        margin-bottom: 0;
+        animation: scaryblink 5s infinite;
+      }
+      @keyframes scaryblink {
+        0% {
+          opacity: 100%;
         }
-        .nav-bar{
-            width: 70%;
-            display: flex;
-            justify-content: space-around;
-            color: #fff;
-            align-items: center ;
-            font-weight: 100;
-            font-family: 'Inter', sans-serif;
+        20% {
+          opacity: 100%;
         }
-        .nav-bar span{
-            transition: 0.5s;
+        22% {
+          opacity: 0%;
         }
-        .nav-bar span a{
-            color: #fff;
-            text-decoration: none;
+        23% {
+          opacity: 100%;
         }
-
-        .nav-bar span:hover{
-            letter-spacing: 2px;
-
+        24% {
+          opacity: 0%;
         }
-        .nav-bar-main{
-            margin-top: 2%;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        25% {
+          opacity: 100%;
         }
-        .regi-btns{
-            width: 100%;
-            display: flex;
-            gap: 5%;
-            justify-content: center;
-            margin-top: 0%;
+        80% {
+          opacity: 100%;
         }
-        .regi-btn{
-            background: none;
-            border: none;
-            outline: none;
-            padding: 1%;
-            padding-left: 2%;
-            padding-right: 2%;
-            border-radius: 10px;
-            color: #C11620;
-            background-color: #EBE728;
-            transition: 0.4s;
-            border: 1px solid #EBE728;
-            box-shadow: 10px 8px #960c15;
+        81% {
+          opacity: 0%;
         }
-        .regi-btn:hover{
-            box-shadow: 5px 4px #960c15;
-            background-color: transparent;
-            color: #EBE728;
-            border: 1px solid #EBE728;
+        85% {
+          opacity: 0%;
         }
-        a{
-            text-decoration: none;
-            color:#960c15;
+        86% {
+          opacity: 100%;
         }
-        a:hover{
-            color: #EBE728;
-        }
-        .about-event{
-            color: #EBE728;
-            margin-left: 9%;
-            margin-right: 9%;
-
-            text-align: center;
-            font-weight: 300;
-            font-family: 'Inter', sans-serif;
-        }
-        .about-head{
-            text-align: center;
-            font-size: 30px;
-            color: #EBE728;
-            font-family: 'Inter', sans-serif;
-            font-weight: 800;
-            margin-top: 6%;
-        }
-        .about-sec{
-            /* background-color: #EBE728; */
-            margin-left: 5%;
-            margin-right: 5%;
-            margin-top: 5%;
-            padding: .2%;
-            border-radius: 10px;
-        }
-        @media only screen and (max-width: 600px) {
-                .nav-bar{
-                    margin-top: 10%;
-                }
-                .logo{
-                    width: 100%;
-                    margin-top: 10%;
-                }
-                .regi-btns{
-                    margin-top: 15%;
-                    display: flex;
-                    flex-direction: column;
-                    gap: 10%;
-                    align-items: center;
-                }
-                .regi-btn{
-                    border-radius: 10px;
-                    /* width: 50%; */
-                    margin-top:5%;
-                    height: 40px;
-                }
+      }
+      .red-text {
+        color: #c9193b;
+      }
+      .secondary-text {
+        font-family: "Scream Again";
+        font-size: 50px;
+        color: #c9193b;
+        margin-top: 0;
+      }
+      .button-main {
+        font-family: "Hell Print";
+        font-size: 30px;
+        background-color: #c9193b;
+        color: #f7f0d5;
+        border: none;
+        padding: 10px;
+        box-shadow: 3px 5px #262626;
+        transition: 0.2s;
+      }
+      .button-main:hover {
+        box-shadow: 5px 10px #262626;
+      }
+      .pop-up{
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0,0.5);
+        display: none;
+        align-items: center;
+        justify-content: center;
+    }
+    .popup-box{
+        background:url(paper.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 800px;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .options{
+      display: flex;
+      gap: 15px;
+      flex-direction: row;
+    }
+    .paper-main-txt{
+      font-family: "Scream Blood";
+      font-size: 35px;
+      margin-top: 0;
+      color: #bb0a1e;
+      margin-bottom: 0;
+      text-align: center;
+      width: 500px;
+    }
+    .game-options{
+      display: flex;
+      gap: 15px;
+      flex-direction: column;
+      display: none;
+      text-align: center;
+    }
+    .pop-up button:hover{
+      color: #bb0a1e;
+    }
+    .pop-up button{
+      border: transparent;
+      font-size: 35px;
+      color: #000000;
+      font-family: "Scream Blood";
+      background-color: transparent;
+      transition: 0.2s;
     }
     </style>
-</head>
-<body>
-    <div class="overlay"></div>
-    <div class="nav-bar-main">
-    <div class="nav-bar">
-        <span><a href="Chakrawyuha-Brochure-2k24.pdf" target="_blank">Brochure</a></span>
-        <!-- <span><a href="#">Registration</a></span> -->
-        <!-- <span><a href="#">Contact Team</a></span> -->
-        <span><a href="https://www.instagram.com/_kesscchakrawyuha_" target="_blanks">Instagram</a></span>
+  </head>
+  <body>
+    <div class="block-content">
+      <div class="black-bg"></div>
+      <p class="ani main-title" data-speed="1">
+        Ch<span class="red-text">a</span>kr<span class="red-text">a</span
+        >wyuh<span class="red-text">a</span> 2<span class="red-text">k</span>24
+        - 25
+      </p>
+      <p class="secondary-text ani" data-speed="-2">Coming Soon...</p>
+      <button class="button-main ani" data-speed="3" onclick="redirectinsta()">Watch The Trailer</button>
+      <button class="button-main ani" data-speed="-2" onclick="startthegame()">
+        Let's Play a Game   <i class="fa fa-play" style="font-size:20px"></i>
+      </button>
     </div>
+    <div class="audio-div">
+        <audio controls id="bgaudio" loop hidden>
+            <source src="bg-music.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+          </audio>
+          <audio controls id="loseaudio" hidden>
+            <source src="/lose.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+          </audio>
+          <audio controls id="win" loop hidden>
+            <source src="win.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+          </audio>
     </div>
-    <div class="logo-div"><img src="chakrawyuha-main-logo.png" alt="Chakrawyuha-comic-theme" class="logo"></div>
-    <div class="regi-btns">
-        <button class="regi-btn"><a href="https://forms.gle/BkxyymSFTpfXAf9H6" target="_blank">CC Registration </a></button>
-        <button class="regi-btn"> <a href="https://forms.gle/F9TbH1LRkFsJX9ab6" target="_blank"> NCP Registration</a></button>
+    <div class="pop-up ani" data-speed="10" id="popgame">
+        <div class="popup-box">
+        <p class="paper-main-txt ani" data-speed="-1" id="main-text" >You and your friends are stuck in a scary house on a stormy night. You hear a creepy voice giving you choices. Choose wisely to escape… or stay trapped forever!</p>
+        <div class="options" id="mainopt">
+        <button onclick="startgame()">Begin</button>
+        <button onclick="closewindow()">Quit</button>
+        </div>
+        <div class="game-options" id="gameopt">
+          <button onclick="youlost()" id="option1">Door 1: A door with blood marks.</button>
+        <button onclick="youlost()" id="option2">Door 2: A metal door with scratches.</button>
+        <button onclick="op3()" id="option3">Door 3: A plain door slightly open.</button>
+        </div>
+        <div class="game-options" id="gameopt2">
+          <button onclick="youlost()" id="option1">A rusty knife.</button>
+        <button onclick="youlost()" id="option2">A broken mirror.</button>
+        <button onclick="r2op3()" id="option3">A small lantern with weak light.</button>
+        </div>
+        <div class="game-options" id="gameopt3">
+          <button onclick="youlost()" id="option1">Open the window.</button>
+        <button onclick="r3op2()" id="option2">Ignore the figure.</button>
+        <button onclick="youlost()" id="option3">Block the window.</button>
+        </div>
+        <div class="game-options" id="gameopt4">
+          <button onclick="r4op3()" id="option3">"Forgive."</button>
+          <button onclick="youlost()" id="option2">"Quiet."</button>
+          <button onclick="youlost()" id="option1">"Mercy."</button>
+        </div>
+        <div class="game-options" id="winopt">
+          <button onclick="closewindow()" id="option3">Go back to home. -></button>
+        </div>
+      </div>
     </div>
-    <div class="about-sec">
-    </div>
-</body>
+    <script>
+        var audio_file = document.getElementById("bgaudio");
+        audio_file.volume = 0.2;
+        var audio_file2 = document.getElementById("loseaudio");
+        audio_file2.volume = 0.2;
+        var audio_file3 = document.getElementById("win");
+        audio_file3.volume = 0.2;
+      document.addEventListener("mousemove", parallax);
+      function parallax(e) {
+          document.querySelectorAll(".ani").forEach(function(layer){
+              const speed = layer.getAttribute("data-speed");
+              const x = (window.innerWidth - e.pageX * speed)/250;
+              const y = (window.innerHeight - e.pageY * speed)/250 ;
+            layer.style.transform = "translateX("+ x +"px) translateY("+ y +"px)";
+    });
+      }
+      function startthegame(){
+        document.getElementById('popgame').style.display="flex";
+        audio_file.play();
+      }
+      function closewindow(){
+        document.getElementById('popgame').style.display="none";
+        audio_file.pause();
+        audio_file2.pause();
+        audio_file3.pause();
+      }
+      function startgame(){
+        document.getElementById('main-text').innerHTML="You see three doors. Which one do you pick?";
+        document.getElementById("gameopt").style.display = "flex";
+        document.getElementById("mainopt").style.display = "none";
+      }
+      function youlost(){
+        document.getElementById('main-text').innerHTML="The house keeps you forever, Don't Give up Try Again";
+        document.getElementById("mainopt").style.display = "flex";
+        document.getElementById("gameopt").style.display = "none";
+        document.getElementById("gameopt2").style.display = "none";
+        document.getElementById("gameopt3").style.display = "none";
+        document.getElementById("gameopt4").style.display = "none";
+        audio_file2.play();
+      }
+      function op3() {
+        document.getElementById('main-text').innerHTML="Inside the room, you find three things, Which one do you take?";
+        document.getElementById("gameopt2").style.display = "flex";
+        document.getElementById("gameopt").style.display = "none";
+      }
+      function r2op3(){
+        document.getElementById('main-text').innerHTML="You hear knocking at the window. A pale figure is outside, asking to come in. What do you do?";
+        document.getElementById("gameopt3").style.display = "flex";
+        document.getElementById("gameopt2").style.display = "none";
+      }
+      function r3op2(){
+        document.getElementById('main-text').innerHTML="You find stairs to the attic and hear crying. The spirits want you to say one word to calm them. What do you say?";
+        document.getElementById("gameopt4").style.display = "flex";
+        document.getElementById("gameopt3").style.display = "none";
+      }
+      function r4op3(){
+        document.getElementById('main-text').innerHTML="You escape and win!";
+        document.getElementById("gameopt").style.display = "none";
+        document.getElementById("gameopt2").style.display = "none";
+        document.getElementById("gameopt3").style.display = "none";
+        document.getElementById("gameopt4").style.display = "none";
+        document.getElementById("winopt").style.display = "flex";
+        audio_file3.play();
+        audio_file.pause();
+      }
+      function redirectinsta(){
+        window.open("https://www.instagram.com/reel/DCt5TpHPWWf/?igsh=MWR3bjk2emZnanJtcg==", '_blank');
+      }
+    </script>
+  </body>
 </html>
