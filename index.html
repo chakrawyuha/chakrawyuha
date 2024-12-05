@@ -20,12 +20,11 @@
         src: url("/Scream\ Blood\ Regular.ttf");
       }
       body {
-        background: url("/background.png");
+        background:url("/background.png"); 
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
         animation: movespace 300s infinite;
-        overflow: hidden;
       }
       @keyframes movespace {
         0% {
@@ -38,9 +37,28 @@
           background-position: top;
         }
       }
+      .nav-bar{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+      }
+      .nav-bar a{
+        margin-top: 20px;
+        color: #f7f0d5;
+        font-size: 30px;
+        font-family: Scream Blood;
+        text-decoration: none;
+        transition: 1s;
+      }
+      .nav-bar a:hover{
+        margin-top: 33px;
+        opacity: 60%;
+      }
       .block-content {
         text-align: center;
-        margin-top: 15%;
+        margin-top:2%;
+        overflow: hidden;
+        padding-bottom: 30px;
       }
       .black-bg {
         height: 100vh;
@@ -169,9 +187,50 @@
       background-color: transparent;
       transition: 0.2s;
     }
+    @media screen and (max-width: 1197px) {
+      .main-title{
+        font-size: 60px;
+      }
+      .secondary-text{
+        font-size: 25px;
+      }
+      .button-main{
+        font-size: 20px;
+      }
+    }
+    @media screen and (max-width: 850px){ 
+        body{
+          background-size: 350%;
+          animation: none;
+        }
+    }
+    @media screen and (max-width: 550px){ 
+      .main-title{
+        font-size: 13vw;
+      }
+      .secondary-text{
+        font-size: 20px;
+      }
+      .button-main{
+        font-size: 25px;
+        margin-top: 5%;
+      }
+      .popup-box{
+        width: 700px;
+        height: 200px;
+    }
+    .paper-main-txt{
+      font-size: 25px;
+      width: 250px;
+    }
+    .pop-up button{
+      font-size: 25px;
+    }
+    }
     </style>
   </head>
   <body>
+    <div class="nav-bar"><a href="/">Brochure</a> <a href="/">Instagram</a></div>
     <div class="block-content">
       <div class="black-bg"></div>
       <p class="ani main-title" data-speed="1">
@@ -179,8 +238,8 @@
         >wyuh<span class="red-text">a</span> 2<span class="red-text">k</span>24
         - 25
       </p>
-      <p class="secondary-text ani" data-speed="-2">Coming Soon...</p>
-      <button class="button-main ani" data-speed="3" onclick="redirectinsta()">Watch The Trailer</button>
+      <p class="secondary-text ani" data-speed="-2">Come Break The Barrier...</p>
+      <button class="button-main ani" data-speed="3" onclick="redirectinsta()">CL Meet Registration</button>
       <button class="button-main ani" data-speed="-2" onclick="startthegame()">
         Let's Play a Game   <i class="fa fa-play" style="font-size:20px"></i>
       </button>
@@ -200,7 +259,7 @@
           </audio>
     </div>
     <div class="pop-up" id="popgame">
-        <div class="popup-box ani" data-speed="10">
+        <div class="popup-box ani" id="main-paper" data-speed="10">
         <p class="paper-main-txt ani" data-speed="-1" id="main-text" >You and your friends are stuck in a scary house on a stormy night. You hear a creepy voice giving you choices. Choose wisely to escape… or stay trapped forever!</p>
         <div class="options" id="mainopt">
         <button onclick="startgame()">Begin</button>
@@ -297,7 +356,11 @@
         audio_file.pause();
       }
       function redirectinsta(){
-        window.open("https://www.instagram.com/reel/DCt5TpHPWWf/?igsh=MWR3bjk2emZnanJtcg==", '_blank');
+        window.open("https://forms.gle/Zo14GQWm3iuFSDTn7", '_blank');
+      }
+      console.log(screen.width)
+      if (screen.width <= 550) {
+        document.getElementById('main-paper').innerHTML="<p class='paper-main-txt'>Open Destop to Play</p><br><button onclick='closewindow()'>Close</button>"
       }
     </script>
   </body>
