@@ -19,11 +19,22 @@
         font-family: Scream Blood;
         src: url("/Scream\ Blood\ Regular.ttf");
       }
-      body {
+      @font-face {
+        font-family: hbrush;
+        src: url("Horror\ Brush.otf");
+      }
+      .bg{
         background:url("/background.png"); 
-        background-position: center;
-        background-size: cover;
         background-repeat: no-repeat;
+        background-size: 100%;
+        top: 0px;
+        left: 0px;
+        bottom: 0px;
+        right: 0px;
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        z-index: -1;
         animation: movespace 300s infinite;
       }
       @keyframes movespace {
@@ -63,8 +74,8 @@
       .black-bg {
         height: 100vh;
         width: 100vw;
-        position: absolute;
-        background-color: #0000009d;
+        position: fixed;
+        background-color: #0000007c;
         top: 0;
         left: 0;
         overflow: hidden;
@@ -131,6 +142,9 @@
       .button-main:hover {
         box-shadow: 5px 10px #262626;
       }
+      button{
+        cursor: pointer;
+      }
       .pop-up{
         width: 100vw;
         height: 100vh;
@@ -187,6 +201,104 @@
       background-color: transparent;
       transition: 0.2s;
     }
+    .event-title{
+      font-family: "Scream Again";
+        font-size: 50px;
+        color: #f7f0d5;
+        margin-bottom: 0;
+        /* background-color: #f7f0d5; */
+        /* width: 100%; */
+        /* text-align: center; */
+    }
+    .event-div{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin: 20px;
+      border-radius: 20px;
+      margin-top: 5%;
+      /* background-color: #c9193b; */
+      background: linear-gradient(to bottom, #c9193ce4,#c9193cc1),url("grunge.jpg"),center,center;
+      padding-bottom: 30px;
+    }
+    .tp-cards-div{
+                width: 90%;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                gap: 5%;
+              }
+              .tp-card{
+                width: 300px;
+                padding: 20px;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                background-color:#f7f0d5;
+                border-radius: 15px;
+                margin-top: 50px;
+                max-width: 300px; 
+            }
+            .tp-card div{
+              width: 95%;
+            }
+            .tp-card-img{
+                width: 90%;
+                object-fit: contain;
+            }
+            .tp-card-title{
+                font-size: 45px;
+                font-family: "Hell Print";
+                color: #c9193b;
+                margin-bottom: 0;
+            }
+            .tp-s-title{
+              font-size: 25px;
+              font-family: "Hell Print";
+                color: #c9193b;
+                margin-bottom: 0;
+                margin-top: 0;
+            }
+            .tp-card-description{
+              font-family: "hbrush";
+                color: #1e1e1e;
+                font-size: 25px;
+            }
+            .tp-card-btn{
+                background-color: #c9193b;
+                color: #f7f0d5;
+                font-size: 13pt;
+                font-family: 'Playfair Display';
+                border: 1px solid #c9193b;
+                outline: none;
+                height: 45px;
+                border-radius: 20px;
+                width: 70%;
+                transition: 0.3s;
+                padding-bottom:1% ;
+            }
+            .tp-card-btn:hover{
+                background-color: #f7f0d5;
+                color: #c9193b;
+            }
+            .last-imp-note{
+              font-size: 25px;
+              margin-top: 5%;
+              font-family: "Scream Again";
+              color: #f7f0d5;
+              text-align: center;
+            }
+            .brochure-link{
+              text-decoration:overline;
+              color: rgb(255, 237, 165);
+              transition: 0.2s;
+            }
+            .brochure-link:hover{
+              color: #f7f0d5;
+            }
     @media screen and (max-width: 1197px) {
       .main-title{
         font-size: 60px;
@@ -197,12 +309,34 @@
       .button-main{
         font-size: 20px;
       }
+      .event-title{
+        font-size: 35px;
+      }
     }
     @media screen and (max-width: 850px){ 
-        body{
-          background-size: 350%;
+        .bg{
+          background-size: 200%;
           animation: none;
         }
+        .event-title{
+        font-size: 25px;
+        text-align: center;
+      }
+      .tp-card{
+        width: 270px;
+      }
+      .tp-card-title{
+         font-size: 35px;
+      }
+      .tp-s-title{
+        font-size: 20px;
+      }
+      .tp-card-description{
+        font-size: 22px;
+      }
+      .last-imp-note{
+        font-size: 15px;
+      }
     }
     @media screen and (max-width: 550px){ 
       .main-title{
@@ -210,6 +344,7 @@
       }
       .secondary-text{
         font-size: 20px;
+        margin-bottom: 9%;
       }
       .button-main{
         font-size: 25px;
@@ -230,6 +365,7 @@
     </style>
   </head>
   <body>
+    <div class="bg"></div>
     <div class="nav-bar"><a href="/chakrawyuha2k24-25_brochure.pdf" target="_blank">Brochure</a> <a href="https://www.instagram.com/_kesscchakrawyuha_/" target="_blank">Instagram</a></div>
     <div class="block-content">
       <div class="black-bg"></div>
@@ -239,7 +375,7 @@
         - 25
       </p>
       <p class="secondary-text ani" data-speed="-2">Come Break The Barrier...</p>
-      <button class="button-main ani" data-speed="3" onclick="redirectinsta()">CL Meet Registration</button>
+      <button class="button-main ani" data-speed="3" onclick="redirectinsta()">Theme Reveal</button>
       <button class="button-main ani" data-speed="-2" onclick="startthegame()">
         Let's Play a Game   <i class="fa fa-play" style="font-size:20px"></i>
       </button>
@@ -290,6 +426,100 @@
         </div>
       </div>
     </div>
+    <div class="event-div">
+        <p class="event-title">Registration Link</p>
+        <div class="tp-cards-div">
+          <div class="tp-card ani" data-speed="2">
+              <img class="tp-card-img" src="chakrawyuha-img.jpg" />
+              <div>
+              <p class="tp-card-title">Chakrawyuha</p>
+              <p class="tp-s-title">- Flagship Events</p>
+              <ul class="tp-card-description">
+                <li>Box Cricket</li>
+                <li>Tug of war</li>
+                <li>Rink football</li>
+                <li>Solo dance</li>
+                <li>Group dance</li>
+                <li>Pr Rally</li>
+                <li>Mr and Ms Chakrawyuha</li>
+                <li>Fashion show</li>
+                <li>Beatbox and Rap</li></ul>
+          </div>
+          <button class="tp-card-btn" onclick="chakrawyuha()">Participate</button>
+          </div>
+          <div class="tp-card ani" data-speed="-1">
+            <img class="tp-card-img" src="artbeat.jpg" />
+            <div>
+            <p class="tp-card-title">Artbeat </p>
+            <p class="tp-s-title">- Humanities Department</p>
+            <ul class="tp-card-description">
+              <li>Street Play</li>
+              <li>Elocution</li>
+              <li>Tote Bag</li>
+              <li>Stand up Comedy</li>
+              <li>Face Painting</li>
+              <li>Rangoli</li>
+              <li>Solo Singing</li>
+              <li>Mehendi</li>
+            </ul>
+        </div>
+        <button class="tp-card-btn" onclick="artbeat()">Participate</button>
+        </div>
+        <div class="tp-card ani" data-speed="1">
+          <img class="tp-card-img" src="bizwaves.jpg" />
+          <div>
+          <p class="tp-card-title">BizWaves</p>
+          <p class="tp-s-title">- Finance Events</p>
+          <ul class="tp-card-description">
+            <li>Business Bufoonery</li>
+            <li>BizPitch Arena</li>
+            <li>Market Mavrick</li>
+            <li>Brand Battle</li>
+            <li>Group dance</li>
+            <li>Life expect the unexpected</li>
+            <li>Fortune Finders</li>
+            <li>Balance Sheet Gafla</li>
+          </ul>
+      </div>
+      <button class="tp-card-btn" onclick="bizwaves()">Participate</button>
+      </div>
+      <div class="tp-card ani" data-speed="1">
+        <img class="tp-card-img" src="mambozz.jpg" />
+        <div>
+        <p class="tp-card-title">Mambozz</p>
+        <p class="tp-s-title">- Media & Flim Events</p>
+        <ul class="tp-card-description">
+          <li>Short Film</li>
+          <li>Creative Writing</li>
+          <li>Teleprompter</li>
+          <li>Photography</li>
+          <li>Journalism War</li>
+          <li>War of DJs</li>
+          <li>Group Folk Dance</li>
+          <li>Skit</li>
+        </ul>
+    </div>
+    <button class="tp-card-btn" onclick="mambozz()">Participate</button>
+    </div>
+    <div class="tp-card ani" data-speed="-2">
+      <img class="tp-card-img" src="sapphire.jpg" />
+      <div>
+      <p class="tp-card-title">Sapphire</p>
+      <p class="tp-s-title">- Technical Events</p>
+      <ul class="tp-card-description">
+        <li>The Sapphire Cipher</li>
+        <li>Sapphire Sprint</li>
+        <li>Cubing</li>
+        <li>Robowars</li>
+        <li>Beyond Pixels</li>
+        <li>BGMI</li>
+        <li>Valorant</li>
+      </ul>
+  </div>
+  <button class="tp-card-btn" onclick="sapphire()">Participate</button>
+  </div>
+</div>
+<p class="last-imp-note">Detailed rules for all event available in <a href="/chakrawyuha2k24-25_brochure.pdf" class="brochure-link" target="_blank">Brochure</a></p>
     <script>
         var audio_file = document.getElementById("bgaudio");
         audio_file.volume = 0.2;
@@ -356,7 +586,22 @@
         audio_file.pause();
       }
       function redirectinsta(){
-        window.open("https://forms.gle/Zo14GQWm3iuFSDTn7", '_blank');
+        window.open("/theme-reveal.mp4", '_blank');
+      }
+      function chakrawyuha(){
+        window.open("https://forms.gle/ZmZCA4hGXTD18aej8", '_blank');
+      }
+      function artbeat(){
+        window.open("https://forms.gle/jmchyJgJhE5M56LV8", '_blank');
+      }
+      function mambozz(){
+        window.open("https://forms.gle/e2HbhqecNHoSxU9Y8", '_blank');
+      }
+      function sapphire(){
+        window.open("https://forms.gle/whLA2zaoiBrPMsdd7", '_blank');
+      }
+      function bizwaves(){
+        window.open("https://forms.gle/HP4mcKkALKZ4EWAv8", '_blank');
       }
       console.log(screen.width)
       if (screen.width <= 550) {
